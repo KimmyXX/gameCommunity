@@ -1,12 +1,38 @@
 {
-  "name": "gameCommunity",
+  "name": "game_community",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "broserslist": [
+    ">1%",
+    "last 2 versions"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "build2": "webpack-dev-server"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "babel-loader": "^8.0.0-beta.0",
+    "css-loader": "^5.0.0",
+    "html-webpack-plugin": "^4.5.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.4",
+    "style-loader": "^2.0.0",
+    "vue-loader": "^15.9.3",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "vue": "^2.6.12"
+  }
 }
