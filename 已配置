@@ -2,3 +2,15 @@ babel
 sass
 css
 vue
+mini-css-extract-plugin
+
+vuex
+vue-router
+vue-resource
+postcss-loader-------------autoprefixer
+file-loader处理图片，字体
+注意babel和autoprefixer都是要配置package.json的browserslist选项才有效
+element-ui----------babel-plugin-component按需导入
+
+未配置
+
