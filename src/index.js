@@ -1,5 +1,6 @@
 import './style/init.css'
 import './elementUi.js'
+import './vueResource.js'
 import Vue from 'vue'
 import App from './components/App.vue'
 import router from './router.js'

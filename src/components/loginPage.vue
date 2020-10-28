@@ -54,7 +54,7 @@
             </el-form-item>
             <el-form-item label="确认密码" prop="cofirmPassword">
               <el-input
-                type="text"
+                type="password"
                 v-model="registerForm.cofirmPassword"
               ></el-input>
             </el-form-item>
@@ -64,23 +64,31 @@
 
             <el-form-item label="头像">
               <el-upload
-                  class="avatar-uploader"
-                  action
-                  :on-change="createImgUrl"
-                  :auto-upload="false"
-                  :limit="1"
-                  :show-file-list="false"
-                  :file-list="fileList"
-                >
-                  <img v-if="imageUrl" :src="imageUrl" style="width: 80px;height: 80px;" class="avatar" @click="handleRemove()" />
-                  <div v-else class="addImg">
-                    <i class="el-icon-plus avatar-uploader-icon"></i>
-                  </div>
-                </el-upload>
+                class="avatar-uploader"
+                action
+                :on-change="createImgUrl"
+                :auto-upload="false"
+                :limit="1"
+                :show-file-list="false"
+                :file-list="fileList"
+              >
+                <img
+                  v-if="imageUrl"
+                  :src="imageUrl"
+                  style="width: 80px; height: 80px"
+                  class="avatar"
+                  @click="handleRemove()"
+                />
+                <div v-else class="addImg">
+                  <i class="el-icon-plus avatar-uploader-icon"></i>
+                </div>
+              </el-upload>
             </el-form-item>
 
             <el-form-item class="buttonBox">
-              <el-button type="primary" class="form-button">注册</el-button>
+              <el-button type="primary" class="form-button" @click="register"
+                >注册</el-button
+              >
               <el-button
                 type="info"
                 class="form-button"
@@ -89,6 +97,7 @@
               >
             </el-form-item>
           </el-form>
+          
         </transition>
       </el-main>
     </el-container>
@@ -146,7 +155,7 @@ export default {
     };
     return {
       // 切换注册表单登录表单
-      toggleForm: false,
+      toggleForm: true,
       // 图片url缩略图
       imageUrl: "",
       // 图片文件数组
@@ -177,6 +186,7 @@ export default {
         userPassword: "",
         cofirmPassword: "",
         nickname: "",
+        userPhoto: null,
       },
       // 注册规则
       registerRules: {
@@ -208,17 +218,28 @@ export default {
     };
   },
   methods: {
+    // 登录
     login() {
       this.$refs.form.validate((passFlag, notPassField) => {
         if (passFlag) {
-
-          
-          this.$message({
-            type: "success",
-            message: "登录成功",
-          });
-
-
+          this.$http
+            .post("login", this.form)
+            .then(({ data }) => {
+              if (data.loginSuccess) {
+                this.$message({
+                  type: "success",
+                  message: "登录成功",
+                });
+              } else {
+                this.$message({
+                  type: "warning",
+                  message: "登录失败，账号或密码错误",
+                });
+              }
+            })
+            .catch((err) => {
+              this.$message.error("连接服务器错误");
+            });
         } else {
           this.$message({
             type: "warning",
@@ -227,14 +248,57 @@ export default {
         }
       });
     },
+    // 注册
+    register() {
+      this.$refs.registerForm.validate((passFlag, notPassField) => {
+        if (passFlag) {
+          if (this.registerForm.userPhoto != null) {
+            let registerData = new FormData();
+            registerData.append("userId", this.registerForm.userId);
+            registerData.append("userPassword", this.registerForm.userPassword);
+            registerData.append("nickname", this.registerForm.nickname);
+            registerData.append("userPhoto", this.registerForm.userPhoto);
+            this.$http
+              .post("register", registerData)
+              .then(({ data }) => {
+                if (data.registerSuccess) {
+                  this.$message({
+                    type: "success",
+                    message: "注册成功",
+                  });
+                } else {
+                  this.$message({
+                    type: "warning",
+                    message: "注册失败，账号重复",
+                  });
+                }
+              })
+              .catch((err) => {
+                this.$message.error("连接服务器错误");
+              });
+          } else {
+            this.$message({
+              type: "warning",
+              message: "请选择头像图片",
+            });
+          }
+        } else {
+          this.$message({
+            type: "warning",
+            message: "注册信息错误",
+          });
+        }
+      });
+    },
     createImgUrl(file) {
-        this.imageUrl = URL.createObjectURL(file.raw);
+      this.imageUrl = URL.createObjectURL(file.raw);
+      this.registerForm.userPhoto = file.raw;
     },
     handleRemove() {
-        this.imageUrl = "";
-        this.fileList = [];
-    }
-  }
+      this.imageUrl = "";
+      this.fileList = [];
+    },
+  },
 };
 </script>
 
@@ -270,26 +334,26 @@ export default {
         border: 2px solid gray;
         border-radius: 10px;
         .form-button {
-          width: 7rem;
+          width: 45%;
         }
         .buttonBox {
           display: flex;
           justify-content: space-between;
         }
         .addImg {
-          width:80px;
-          height:80px;
+          width: 80px;
+          height: 80px;
           border: 1px dashed black;
-          display:flex;
-          align-items:center;
-          justify-content:center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           i {
             font-size: 30px;
           }
           &:hover {
             border: 1px dashed skyblue;
             i {
-                color: skyblue;
+              color: skyblue;
             }
           }
         }
