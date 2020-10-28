@@ -1,12 +1,13 @@
 import './style/init.css'
-import './style/init.scss'
 import './elementUi.js'
 import Vue from 'vue'
 import App from './components/App.vue'
+import router from './router.js'
 
 
 new Vue({
     render: function(h) {
         return h(App);
-    }
+    },
+    router
 }).$mount("#app");

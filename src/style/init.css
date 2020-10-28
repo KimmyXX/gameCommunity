@@ -1,6 +1,4 @@
-body {
-    background-color: skyblue;
-    color: blue;
-    display: flex;
-    background: url(../img/1.png);
+* {
+    padding: 0;
+    margin: 0;
 }

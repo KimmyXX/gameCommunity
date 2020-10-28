@@ -9,7 +9,8 @@ module.exports = {
     entry: path.join(__dirname, "./src/index.js"),
     output: {
         path: path.join(__dirname, "./dist"),
-        filename: "index.js"
+        filename: "index.js",
+        chunkFilename: "[name].js"
     },
     plugins: [
         new HtmlWebpackPlugin({ template: path.join(__dirname, "./src/index.html"), filename: "index.html" }),
@@ -18,9 +19,9 @@ module.exports = {
     ],
     module: {
         rules: [
-            { test: /\.css$/, use: [{ loader: MiniCssExtractPlugin.loader }, "css-loader", { loader: "postcss-loader" }] },
+            { test: /\.css$/, use: [{ loader: MiniCssExtractPlugin.loader }, "css-loader", "postcss-loader"] },
             { test: /\.js$/, exclude: /(node_modules)/, use: "babel-loader" },
-            { test: /\.scss/, use: [{ loader: MiniCssExtractPlugin.loader }, "css-loader", { loader: "postcss-loader" }, "sass-loader"] },
+            { test: /\.scss/, use: [{ loader: MiniCssExtractPlugin.loader }, "css-loader", "postcss-loader" , "sass-loader"] },
             { test: /\.vue$/, use: ["vue-loader"] },
             {
                 test: /\.(png|jpe?g|gif)$/,

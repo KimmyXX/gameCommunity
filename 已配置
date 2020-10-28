@@ -3,7 +3,6 @@ sass
 css
 vue
 mini-css-extract-plugin
-
 vuex
 vue-router
 vue-resource
@@ -13,4 +12,4 @@ file-loader处理图片，字体
 element-ui----------babel-plugin-component按需导入
 
 未配置
-
+压缩打包terser-webpack-plugin
