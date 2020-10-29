@@ -97,7 +97,7 @@
               >
             </el-form-item>
           </el-form>
-          
+
         </transition>
       </el-main>
     </el-container>
@@ -230,6 +230,8 @@ export default {
                   type: "success",
                   message: "登录成功",
                 });
+                this.$store.commit("changeUserInfo", data.userInfo);
+                this.$router.push("/mainPage");
               } else {
                 this.$message({
                   type: "warning",
