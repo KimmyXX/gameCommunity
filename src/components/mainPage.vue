@@ -1,6 +1,6 @@
 <template>
   <div class="containBox">
-    <div>
+    <div class="topBox">
       <router-view name="module1"></router-view>
     </div>
     <div class="bottomBox">
@@ -20,16 +20,19 @@ export default {};
   flex-direction: column;
   align-items: center;
   width: 90%;
-  background-color: rgba(9, 132, 227,1.0);
+  background-color: rgba(9, 132, 227, 1);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   min-height: 100%;
+  .topBox {
+    width: 100%;
+  }
   .bottomBox {
     display: flex;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    justify-content: center;
     margin-top: 20px;
   }
 }
