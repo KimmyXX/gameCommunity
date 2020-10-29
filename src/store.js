@@ -5,7 +5,8 @@ let store = new Vuex.Store({
   state: {
     userInfo: null,
     // 用户头像获取位置
-    userPhotoPath: 'http://127.0.0.1:10998/upload/'
+    userPhotoPath: 'http://127.0.0.1:10998/upload/',
+    gameModuleImg: 'http://127.0.0.1:10998/gameModuleImg/'
   },
   mutations: {
     changeUserInfo(state, userInfo) {

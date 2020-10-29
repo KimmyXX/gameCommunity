@@ -20,13 +20,17 @@ export default {};
   flex-direction: column;
   align-items: center;
   width: 90%;
-  margin: 0 auto;
+  background-color: rgba(9, 132, 227,1.0);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  min-height: 100%;
   .bottomBox {
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 20px;
   }
 }
 </style>

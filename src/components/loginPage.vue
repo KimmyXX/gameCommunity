@@ -1,6 +1,6 @@
 <template>
   <el-container class="container1">
-    <el-header>Header</el-header>
+    <el-header></el-header>
     <el-container>
       <el-aside width="60%">
         <div class="logo logo1">Game</div>
