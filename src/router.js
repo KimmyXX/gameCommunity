@@ -6,20 +6,33 @@ Vue.use(VueRouter);
 let loginPage = r => require.ensure([], r => require('./components/loginPage.vue'), 'login');
 let mainPage = r => require.ensure([], r => require('./components/mainPage.vue'), 'mainPage');
 let selfModule = r => require.ensure([], r => require('./components/selfModule.vue'), 'mainPage');
-let searchModule = r => require.ensure([], r => require('./components/searchModule.vue'), 'mainPage');
+let searchGameModule = r => require.ensure([], r => require('./components/searchGameModule.vue'), 'mainPage');
 let nav = r => require.ensure([], r => require('./components/nav.vue'), 'mainPage');
+let gameModule = r => require.ensure([], r => require('./components/gameModule.vue'), 'gameModule');
+
 
 const router = new VueRouter({
     mode: "hash",
     routes: [
         { path: "", component: loginPage },
-        { path: "/mainPage", component: mainPage, children: [
-            { path: "", components: {
-                module1: nav,
-                module2: selfModule,
-                module3: searchModule
-            } }
-        ]}
+        {
+            path: "/mainPage", component: mainPage, children: [
+                {
+                    path: "", components: {
+                        module1: nav,
+                        module2: selfModule,
+                        module3: searchGameModule
+                    }
+                },
+                {
+                    path: "gameModule", components: {
+                        module1: nav,
+                        module2: selfModule,
+                        module3: gameModule
+                    }
+                }
+            ]
+        }
     ]
 })
 

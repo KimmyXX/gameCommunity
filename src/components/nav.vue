@@ -1,13 +1,14 @@
 <template>
   <div class="out">
     <el-menu
-      default-active="1"
+      default-active="/mainPage"
       mode="horizontal"
       background-color="white"
       active-text-color="white"
+      :router="true"
     >
-      <el-menu-item index="1">游戏板块</el-menu-item>
-      <el-menu-item index="2">游戏动态</el-menu-item>
+      <el-menu-item index="/mainPage">游戏板块</el-menu-item>
+      <el-menu-item index="/mainPage/gameModule">游戏动态</el-menu-item>
       <el-menu-item index="3">游戏动态收藏夹</el-menu-item>
       <el-menu-item index="4">游戏板块收藏夹</el-menu-item>
     </el-menu>
@@ -15,7 +16,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

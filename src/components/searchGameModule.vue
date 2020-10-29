@@ -42,8 +42,8 @@
             {{ gameModule.moduleIntroduction }}
           </div>
           <div class="utilBox">
-            <el-button type="success" round size="small">进入板块</el-button>
-            <el-button icon="el-icon-star-off" circle size="small"></el-button>
+            <el-button type="success" round size="small" @click="gotoModule(gameModule)">进入板块</el-button>
+            <el-button type="info" icon="el-icon-star-off" circle size="small"></el-button>
           </div>
         </div>
       </div>
@@ -83,6 +83,10 @@ export default {
         .catch((err) => {
           console.log(err.message);
         });
+    },
+    gotoModule(gameModule) {
+      this.$store.commit('changeModuleInfo', gameModule);
+      this.$router.push({path: '/mainPage/gameModule'});
     }
   },
   created() {
