@@ -1,6 +1,12 @@
 <template>
   <div class="out">
     <el-input
+      type="text"
+      placeholder="请输入标题"
+      v-model="title"
+    >
+    </el-input>
+    <el-input
       type="textarea"
       placeholder="请输入内容"
       v-model="content"
@@ -17,13 +23,14 @@ import { mapState } from "vuex";
 export default {
   data() {
     return {
-      content: "",
+      title: "",
+      content: ""
     };
   },
   methods: {
     share() {
       this.$http
-        .post("writeShare", { content: this.content, moduleId: this.moduleInfo.moduleId })
+        .post("writeShare", { content: this.content, title: this.title, moduleId: this.moduleInfo.moduleId })
         .then(({ data }) => {
           if(data.success) {
             this.$message({
@@ -62,7 +69,10 @@ export default {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   .el-button {
-    margin-top: 20px;
+    margin-top: 10px;
+  }
+  .el-input {
+    margin-bottom: 10px;
   }
 }
 </style>

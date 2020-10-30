@@ -1,16 +1,21 @@
 <template>
-  <div class="shareOut">
+  <div class="shareOut" @click="goToShareDetail">
       <div class="userInfo">
         <el-avatar :src="$store.state.userPhotoPath + shareInfo.userPhoto"></el-avatar>
-        <div>{{ shareInfo.userId }}</div>
+        <div>{{ shareInfo.nickname }}</div>
       </div>
-      <div class="content">{{ shareInfo.content }}</div>
+      <div class="shareContent">{{ shareInfo.content }}</div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['shareInfo']
+  props: ['shareInfo'],
+  methods: {
+    goToShareDetail() {
+      this.$router.push({ path: '/mainPage/shareModule', query: { shareId: this.shareInfo.shareId } });
+    }
+  }
 }
 </script>
 
@@ -28,7 +33,7 @@ export default {
       display: flex;
       align-items: center;
     }
-    .content {
+    .shareContent {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
