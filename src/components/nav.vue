@@ -27,7 +27,7 @@ export default {
 <style lang="scss" scoped>
 .out {
   height: 60px;
-  width: 90%;
+  width: 95%;
   background-color: rgba(255, 255, 255, 0.8);
   margin: 0 auto;
 }
