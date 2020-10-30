@@ -159,6 +159,7 @@ export default {
           overflow: hidden;
           font-size: 1rem;
           color: gray;
+          word-break: break-all;
         }
         .utilBox {
           height: 40%;

@@ -8,7 +8,7 @@
         <div class="moduleName">{{ moduleInfo.moduleName }}</div>
         <div class="moduleIntroduction">{{ moduleInfo.moduleIntroduction }}</div>
         <div class="util">
-            <el-button type="primary">分享动态</el-button>
+            <el-button type="primary" @click="$router.push('/mainPage/writeShare')">分享动态</el-button>
             <el-button type="info" circle icon="el-icon-star-off"></el-button>
         </div>
       </div>
@@ -54,7 +54,7 @@ export default {
     .infoBox {
         width: 80%;
         .moduleName {
-            height: 30%;
+            height: 25%;
             font-size: 30px;
             font-weight: bold;
         }
@@ -65,7 +65,8 @@ export default {
             word-break: break-all;
         }
         .util {
-            height: 20%;
+            margin-top: 10px;
+            height: 25%;
         }
     }
   }

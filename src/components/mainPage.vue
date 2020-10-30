@@ -5,7 +5,9 @@
     </div>
     <div class="bottomBox">
       <router-view name="module2"></router-view>
-      <router-view name="module3"></router-view>
+      <transition name="fade" mode="out-in">
+        <router-view name="module3"></router-view>
+      </transition>
     </div>
   </div>
 </template>
@@ -36,4 +38,15 @@ export default {};
     margin-top: 20px;
   }
 }
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s;
+}
+
 </style>
