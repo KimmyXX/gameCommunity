@@ -4,7 +4,7 @@
         <el-avatar :src="$store.state.userPhotoPath + shareInfo.userPhoto"></el-avatar>
         <div>{{ shareInfo.nickname }}</div>
       </div>
-      <div class="shareContent">{{ shareInfo.content }}</div>
+      <div class="shareContent">{{ shareInfo.title }}</div>
   </div>
 </template>
 
@@ -38,6 +38,7 @@ export default {
       text-overflow: ellipsis;
       white-space: nowrap;
       text-indent: 2rem;
+      font-weight: bold;
     }
 }
 </style>

@@ -4,7 +4,11 @@
       <el-avatar
         shape="square"
         :size="40"
-        :src="$store.state.userPhotoPath + shareDetailInfo.userPhoto"
+        :src="
+          shareDetailInfo.userPhoto != ''
+            ? $store.state.userPhotoPath + shareDetailInfo.userPhoto
+            : ''
+        "
       ></el-avatar>
       <div class="nickname">{{ shareDetailInfo.nickname }}</div>
       <div class="introduction">{{ shareDetailInfo.userIntroduction }}</div>
@@ -22,13 +26,25 @@
         resize="none"
       >
       </el-input>
-      <el-button type="primary" @click="writeComment" size="small">发表评论</el-button>
+      <el-button type="primary" @click="writeComment" size="small"
+        >发表评论</el-button
+      >
     </div>
-    <div class="box commentBox"></div>
+    <div class="box commentBox">
+      <div class="noComment" v-if="commentArr.length == 0">
+        暂无评论，快来发表吧！
+      </div>
+      <comment-box
+        v-for="item in commentArr"
+        :key="item.commentId"
+        :commentDetail="item"
+      ></comment-box>
+    </div>
   </div>
 </template>
 
 <script>
+import commentBox from "./commentBox.vue";
 export default {
   data() {
     return {
@@ -44,7 +60,8 @@ export default {
         photoSrc: null,
         vedioSrc: null,
       },
-      commentContent: ""
+      commentContent: "",
+      commentArr: [],
     };
   },
   methods: {
@@ -57,7 +74,6 @@ export default {
         .then(({ data }) => {
           if (data.success) {
             this.shareDetailInfo = data.data;
-            console.log(data.data);
           } else {
             this.$message({
               type: "warning",
@@ -71,11 +87,57 @@ export default {
     },
     // 发表评论
     writeComment() {
-        
-    }
+      this.$http
+        .post("writeComment", {
+          shareId: this.shareDetailInfo.shareId,
+          commentContent: this.commentContent,
+        })
+        .then(({ data }) => {
+          if (data.success) {
+            this.$message({
+              type: "success",
+              message: "发表评论成功",
+            });
+            this.commentContent = "";
+            this.getComment();
+          } else {
+            this.$message({
+              type: "warning",
+              message: "发表评论失败",
+            });
+          }
+        })
+        .catch((err) => {
+          this.$message.error("连接服务器失败");
+        });
+    },
+    // 获取动态评论
+    getComment() {
+      this.$http
+        .get("getComment", {
+          params: { shareId: this.$route.query.shareId },
+        })
+        .then(({ data }) => {
+          if (data.success) {
+            this.commentArr = data.data;
+          } else {
+            this.$message({
+              type: "warning",
+              message: "获取评论信息失败",
+            });
+          }
+        })
+        .catch((err) => {
+          this.$message.error("连接服务器失败");
+        });
+    },
+  },
+  components: {
+    commentBox,
   },
   created() {
     this.getShareDetail();
+    this.getComment();
   },
 };
 </script>
@@ -113,7 +175,8 @@ export default {
       text-align: center;
     }
     .content {
-      text-indent: 2rem;
+      // text-indent: 2rem;
+      white-space: pre-wrap;
     }
   }
   .writeCommentBox {
@@ -121,7 +184,21 @@ export default {
     padding-bottom: 10px;
     min-height: 60px;
     .el-button {
-        margin-top: 10px;
+      margin-top: 10px;
+    }
+  }
+  .commentBox {
+    .noComment {
+      width: 90%;
+      background-color: white;
+      margin: 0 auto;
+      height: 80px;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+      line-height: 80px;
+      color: gray;
     }
   }
 }
