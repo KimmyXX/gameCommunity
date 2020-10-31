@@ -9,10 +9,19 @@
           placeholder="请输入查找用户昵称"
           @keydown.native.enter="searchUser"
         ></el-input>
-        <el-button type="primary" icon="el-icon-search" @click="searchUser"></el-button>
+        <el-button
+          type="primary"
+          icon="el-icon-search"
+          @click="searchUser"
+        ></el-button>
       </div>
       <div class="userList">
-          <user-box v-for="item in userArr" :user="item" :key="item.userId"></user-box>
+        <div class="noUser" v-if="userArr.length == 0">暂无用户消息</div>
+        <user-box
+          v-for="item in userArr"
+          :user="item"
+          :key="item.userId"
+        ></user-box>
       </div>
     </div>
   </div>
@@ -24,7 +33,7 @@ export default {
   data() {
     return {
       searchInput: "",
-      userArr: []
+      userArr: [],
     };
   },
   methods: {
@@ -37,11 +46,11 @@ export default {
         .catch((err) => {
           this.$message.error("连接服务器错误");
         });
-    }
+    },
   },
   components: {
-      userBox
-  }
+    userBox,
+  },
 };
 </script>
 
@@ -67,6 +76,17 @@ export default {
       .el-button {
         align-self: flex-start;
       }
+    }
+    .noUser {
+      width: 80%;
+      height: 50px;
+      background-color: white;
+      border-radius: 10px;
+      margin: 10px auto;
+      padding: 5px;
+      color: gray;
+      text-align: center;
+      line-height: 50px;
     }
   }
 }

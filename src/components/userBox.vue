@@ -46,7 +46,7 @@ export default {
         .catch(() => {
           this.$message({
             type: "info",
-            message: "取消",
+            message: "已取消申请好友",
           });
         });
     },
