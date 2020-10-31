@@ -11,6 +11,7 @@ let nav = r => require.ensure([], r => require('./components/nav.vue'), 'mainPag
 let gameModule = r => require.ensure([], r => require('./components/gameModule.vue'), 'gameModule');
 let writeShare = r => require.ensure([], r => require('./components/writeShare.vue'), 'writeShare');
 let shareModule = r => require.ensure([], r => require('./components/shareModule.vue'), 'shareModule');
+let searchUser = r => require.ensure([], r => require('./components/searchUser.vue'), 'searchUser');
 
 
 
@@ -46,6 +47,13 @@ const router = new VueRouter({
                         module1: nav,
                         module2: selfModule,
                         module3: shareModule
+                    }
+                },
+                {
+                    path: "searchUser", components: {
+                        module1: nav,
+                        module2: selfModule,
+                        module3: searchUser
                     }
                 }
             ]

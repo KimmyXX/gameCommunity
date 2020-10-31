@@ -9,8 +9,7 @@
     >
       <el-menu-item index="/mainPage">游戏板块</el-menu-item>
       <el-menu-item index="/mainPage/gameModule">游戏动态</el-menu-item>
-      <!-- <el-menu-item index="3">游戏动态收藏夹</el-menu-item>
-      <el-menu-item index="4">游戏板块收藏夹</el-menu-item> -->
+      <el-menu-item index="/mainPage/searchUser">查找用户</el-menu-item>
     </el-menu>
   </div>
 </template>

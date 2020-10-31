@@ -1,5 +1,5 @@
 import Vue from "vue";
-import { Button, Container, Aside, Main, Header, Form, FormItem, Input, Message, Upload, Avatar, Row, Col, Image, Select, Option, Menu, MenuItem } from "element-ui";
+import { Button, Container, Aside, Main, Header, Form, FormItem, Input, Message, Upload, Avatar, Row, Col, Image, Select, Option, Menu, MenuItem, MessageBox } from "element-ui";
 
 Vue.use(Button);
 Vue.use(Container);
@@ -20,3 +20,4 @@ Vue.use(Menu);
 Vue.use(MenuItem);
 
 Vue.prototype.$message = Message;
+Vue.prototype.$prompt = MessageBox.prompt;
