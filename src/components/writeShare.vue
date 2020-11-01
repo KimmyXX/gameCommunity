@@ -1,4 +1,5 @@
 <template>
+<!-- 编写动态 -->
   <div class="out">
     <el-input
       type="text"

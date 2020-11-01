@@ -1,4 +1,5 @@
 <template>
+<!-- 导航栏 -->
   <div class="out">
     <el-menu
       default-active="/mainPage"

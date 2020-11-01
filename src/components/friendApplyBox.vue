@@ -1,4 +1,5 @@
 <template>
+<!-- 好友申请列表的申请盒子 -->
   <div class="applyBox">
     <div class="userInfo">
       <el-avatar

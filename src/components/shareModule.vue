@@ -1,4 +1,5 @@
 <template>
+<!-- 动态详情页 -->
   <div class="outBox">
     <div class="box shareUserBox">
       <el-avatar

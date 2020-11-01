@@ -1,4 +1,5 @@
 <template>
+<!-- 主页面用来放置内容 -->
   <div class="containBox">
     <div class="topBox">
       <router-view name="module1"></router-view>

@@ -1,4 +1,5 @@
 <template>
+<!-- 游戏板块的动态列表的简略动态盒子 -->
   <div class="shareOut" @click="goToShareDetail">
       <div class="userInfo">
         <el-avatar :src="$store.state.userPhotoPath + shareInfo.userPhoto"></el-avatar>

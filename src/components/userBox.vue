@@ -35,7 +35,7 @@ export default {
                 } else {
                   this.$message({
                     type: "warning",
-                    message: "添加好友申请发送失败",
+                    message: data.message,
                   });
                 }
               })

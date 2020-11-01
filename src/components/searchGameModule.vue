@@ -1,4 +1,5 @@
 <template>
+<!-- 搜索游戏板块模块 -->
   <div class="out">
     <!-- 搜索栏 -->
     <div class="searchBox">

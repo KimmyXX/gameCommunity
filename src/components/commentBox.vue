@@ -1,4 +1,5 @@
 <template>
+<!-- 动态的评论盒子 -->
   <div class="commentBoxOut">
     <div class="userInfo">
       <el-avatar

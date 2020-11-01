@@ -1,4 +1,5 @@
 <template>
+<!-- 游戏板块详情页 -->
   <div class="outBox">
     <div class="out">
       <div class="moduleInfoBox">

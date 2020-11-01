@@ -1,4 +1,5 @@
 <template>
+<!-- 好友模块 -->
   <div class="outBox">
     <div class="box">
       <div class="friendApplyTitle">好友申请</div>

@@ -1,4 +1,5 @@
 <template>
+<!-- 左侧当前用户个人信息模块 -->
   <div class="out">
     <el-avatar shape="square" :size="80" :src="userPhoto"></el-avatar>
     <span class="nickname">{{ $store.state.userInfo.nickname }}</span>
