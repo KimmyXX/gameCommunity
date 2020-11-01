@@ -30,12 +30,12 @@ export default {
                 if (data.success) {
                   this.$message({
                     type: "success",
-                    message: "添加好友申请发送成功",
+                    message: data.message
                   });
                 } else {
                   this.$message({
                     type: "warning",
-                    message: data.message,
+                    message: data.message
                   });
                 }
               })
