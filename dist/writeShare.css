@@ -1,0 +1,15 @@
+.out[data-v-3ef3c950] {
+  width: 70%;
+  padding: 30px;
+  min-height: 100px;
+  margin-left: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+.out .el-button[data-v-3ef3c950] {
+    margin-top: 10px;
+}
+.out .el-input[data-v-3ef3c950] {
+    margin-bottom: 10px;
+}
+

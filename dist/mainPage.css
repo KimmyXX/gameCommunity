@@ -1,0 +1,187 @@
+.containBox[data-v-24282010] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  background-color: #0984e3;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  min-height: 100%;
+}
+.containBox .topBox[data-v-24282010] {
+    width: 100%;
+}
+.containBox .bottomBox[data-v-24282010] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+}
+.fade-enter[data-v-24282010],
+.fade-leave-to[data-v-24282010] {
+  opacity: 0;
+}
+.fade-enter-active[data-v-24282010],
+.fade-leave-active[data-v-24282010] {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.out[data-v-563cdae8] {
+  width: 20%;
+  height: 200px;
+  background-color: #dfe6e9;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+}
+.out .nickname[data-v-563cdae8] {
+    margin-top: 15px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.out[data-v-784df1d6] {
+  width: 70%;
+  padding: 30px;
+  margin-left: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+.out .searchBox[data-v-784df1d6] {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.out .searchBox .el-input[data-v-784df1d6] {
+      border-radius: 5px 0 0 5px;
+      width: 50%;
+}
+.out .searchBox .el-button[data-v-784df1d6] {
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+}
+.out .searchCondition[data-v-784df1d6] {
+    width: 80%;
+    margin: 10px auto;
+    margin-bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.out .searchResult[data-v-784df1d6] {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.out .searchResult .result[data-v-784df1d6] {
+      width: 80%;
+      height: 150px;
+      border: 2px solid gray;
+      border-radius: 10px;
+      background-color: white;
+      margin-top: 15px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+}
+.out .searchResult .result .imageBox[data-v-784df1d6] {
+        width: 20%;
+        height: 80%;
+        background-color: #dddddf;
+}
+.out .searchResult .result .containBox[data-v-784df1d6] {
+        height: 80%;
+        width: 75%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+}
+.out .searchResult .result .containBox .gameName[data-v-784df1d6] {
+          height: 2rem;
+          width: 100%;
+          font-size: 1.5rem;
+          font-weight: bold;
+}
+.out .searchResult .result .containBox .gameIntroduction[data-v-784df1d6] {
+          height: 3rem;
+          width: 100%;
+          overflow: hidden;
+          font-size: 1rem;
+          color: gray;
+          word-break: break-all;
+}
+.out .searchResult .result .containBox .utilBox[data-v-784df1d6] {
+          height: 40%;
+          width: 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+}
+
+.out[data-v-0276edc3] {
+  height: 60px;
+  width: 95%;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 0 auto;
+}
+.el-menu[data-v-0276edc3] {
+  border: none !important;
+}
+.el-menu-item[data-v-0276edc3]:hover {
+  background: #74b9ff !important;
+}
+.el-menu-item.is-active[data-v-0276edc3] {
+  background-color: #74b9ff !important;
+}
+

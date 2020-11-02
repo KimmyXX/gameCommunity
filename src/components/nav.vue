@@ -40,6 +40,7 @@ export default {
 .el-menu-item:hover {
   background: rgba(116, 185, 255, 1) !important;
 }
+
 .el-menu-item.is-active {
   background-color: rgba(116, 185, 255, 1) !important;
 }
