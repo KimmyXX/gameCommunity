@@ -39,6 +39,13 @@ export default {
   },
   methods: {
     searchUser() {
+      if(this.searchInput == "") {
+        this.$message({
+          type: "warning",
+          message: "请输入查找的用户昵称"
+        })
+        return;
+      }
       this.$http
         .get("searchUser", { params: { searchInput: this.searchInput } })
         .then(({ data }) => {

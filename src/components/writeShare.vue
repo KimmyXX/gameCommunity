@@ -30,6 +30,20 @@ export default {
   },
   methods: {
     share() {
+      if(this.title == "") {
+        this.$message({
+          type: "warning",
+          message: "请输入分享标题"
+        })
+        return ;
+      }
+      if (this.content== ""){
+        this.$message({
+          type: "warning",
+          message: "请输入分享内容"
+        })
+        return ;
+      }
       this.$http
         .post("writeShare", { content: this.content, title: this.title, moduleId: this.moduleInfo.moduleId })
         .then(({ data }) => {

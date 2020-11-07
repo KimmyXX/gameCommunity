@@ -88,6 +88,13 @@ export default {
     },
     // 发表评论
     writeComment() {
+      if(this.commentContent == "") {
+        this.$message({
+          type: "warning",
+          message: "请输入评论信息"
+        })
+        return;
+      }
       this.$http
         .post("writeComment", {
           shareId: this.shareDetailInfo.shareId,
