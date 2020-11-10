@@ -13,7 +13,12 @@ let writeShare = r => require.ensure([], r => require('./components/writeShare.v
 let shareModule = r => require.ensure([], r => require('./components/shareModule.vue'), 'shareModule');
 let searchUser = r => require.ensure([], r => require('./components/searchUser.vue'), 'searchUser');
 let friendModule = r => require.ensure([], r => require('./components/friendModule.vue'), 'friendModule');
+//管理员部分
 let adminLoginPage = r => require.ensure([], r => require('./adminComponents/adminLoginPage.vue'), 'adminLoginPage');
+let adminMainPage = r => require.ensure([], r => require('./adminComponents/adminMainPage.vue'), 'adminMainPage');
+let adminNav = r => require.ensure([], r => require('./adminComponents/adminNav.vue'), 'adminMainPage');
+let addAdmin = r => require.ensure([], r => require('./adminComponents/addAdmin.vue'), 'addAdmin');
+let manageGameModule = r => require.ensure([], r => require('./adminComponents/manageGameModule.vue'), 'manageGameModule');
 
 
 
@@ -64,6 +69,27 @@ const router = new VueRouter({
                         module1: nav,
                         module2: selfModule,
                         module3: friendModule
+                    }
+                }
+            ]
+        },
+        {
+            path: "/adminMainPage", component: adminMainPage, children: [
+                {
+                    path: "", components: {
+                        leftBox: adminNav
+                    }
+                },
+                {
+                    path: "addAdmin", components: {
+                        leftBox: adminNav,
+                        rightBox: addAdmin
+                    }
+                },
+                {
+                    path: "manageGameModule", components: {
+                        leftBox: adminNav,
+                        rightBox: manageGameModule
                     }
                 }
             ]

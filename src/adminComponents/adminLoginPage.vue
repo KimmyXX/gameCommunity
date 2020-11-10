@@ -16,7 +16,6 @@
             :rules="rules"
             :model="form"
             label-width="3rem"
-            key="form"
           >
             <el-form-item label="账号" prop="adminId">
               <el-input type="text" v-model="form.adminId"></el-input>
@@ -102,7 +101,7 @@ export default {
                   type: "success",
                   message: "登录成功",
                 });
-                // this.$router.push("/mainPage");
+                this.$router.push("/adminMainPage");
               } else {
                 this.$message({
                   type: "warning",
