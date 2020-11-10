@@ -85,6 +85,8 @@ export default {
       if (this.socket == null) {
         this.socket = io(
           "http://127.0.0.1:10998?friendId=" + this.friendInfo.friendId
+          // "http://192.168.1.106:10998?friendId=" + this.friendInfo.friendId
+
         );
         this.socket.on("chat message", function (msg) {
           vm.messageArr.push(msg);
@@ -176,6 +178,10 @@ export default {
     height: 500px;
     border: 5px solid gray;
     position: fixed;
+    // left: 50%;
+    // top: 50%;
+    // margin-left: -50%;
+    // margin-top: -50%;
     background-color: gray;
     // border-radius: 10px;
     .messageBoxUtil {

@@ -26,3 +26,7 @@ Vue.http.interceptors.push((request, next) => {
 
 //本地测试版本
 Vue.http.options.root = 'http://127.0.0.1:10998'
+
+//服务器测试版本
+// Vue.http.options.root = ''
+

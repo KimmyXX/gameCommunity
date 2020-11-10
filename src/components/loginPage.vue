@@ -1,7 +1,9 @@
 <template>
 <!-- 登录页面 -->
   <el-container class="container1">
-    <el-header></el-header>
+    <el-header>
+      <el-button @click="$router.push('/adminLoginPage')">管理员登录</el-button>
+    </el-header>
     <el-container>
       <el-aside width="60%">
         <div class="logo logo1">Game</div>
@@ -312,6 +314,9 @@ export default {
   width: 100%;
   .el-header {
     background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
   .el-container {
     width: 70%;

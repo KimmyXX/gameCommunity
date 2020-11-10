@@ -13,6 +13,7 @@ let writeShare = r => require.ensure([], r => require('./components/writeShare.v
 let shareModule = r => require.ensure([], r => require('./components/shareModule.vue'), 'shareModule');
 let searchUser = r => require.ensure([], r => require('./components/searchUser.vue'), 'searchUser');
 let friendModule = r => require.ensure([], r => require('./components/friendModule.vue'), 'friendModule');
+let adminLoginPage = r => require.ensure([], r => require('./adminComponents/adminLoginPage.vue'), 'adminLoginPage');
 
 
 
@@ -20,6 +21,7 @@ const router = new VueRouter({
     mode: "hash",
     routes: [
         { path: "", component: loginPage },
+        { path: "/adminLoginPage", component: adminLoginPage },
         {
             path: "/mainPage", component: mainPage, children: [
                 {
