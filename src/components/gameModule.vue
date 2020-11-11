@@ -6,7 +6,7 @@
         <div class="imgBox">
           <el-image
             :src="gameModuleImg + moduleInfo.modulePhoto"
-            style="width: 100%; height: 100%"
+            style="width: 100%; height: 100%;"
           ></el-image>
         </div>
         <div class="infoBox">
@@ -93,6 +93,7 @@ export default {
     .imgBox {
       width: 20%;
       height: 100%;
+      margin-right: 10px;
     }
     .infoBox {
       width: 80%;
